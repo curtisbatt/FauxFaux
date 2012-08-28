@@ -11,15 +11,23 @@ namespace FauxFaux.Tests
     public class Domain_Repositories
     {
         [TestMethod]
-        public void Characteristics()
+        public void Test1()
         {
-            var repo = new Models(isMock:true);
+            var modelName = "Seamus, The Mad Hatter";
+            var weaponName = "Bag O'Tools";
+            var weaponNewName = "Bag O'Tools Modified";
 
-            var query = repo.First(r => r.Name == "Seamus, The Mad Hatter");
+            var ctx = new Context(isMock: true);
 
-            Assert.IsNotNull(query);
+            var model = ctx.Models.First(m => m.Name == modelName);
+            Assert.IsNotNull(model);
+            Assert.AreEqual(weaponName, model.Weapons[0].Name);
 
-            var weapons = new Weapons(isMock: true);
+            var weapon = ctx.Weapons.First(w => w.Name == weaponName);
+            Assert.IsNotNull(weapon);
+
+            weapon.Name = weaponNewName;
+            Assert.AreEqual(weaponNewName, model.Weapons[0].Name);
         }
     }
 }

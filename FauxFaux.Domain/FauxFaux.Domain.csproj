@@ -50,7 +50,7 @@
     <Compile Include="Repositories\Actions.cs" />
     <Compile Include="Repositories\Characteristics.cs" />
     <Compile Include="Repositories\Models.cs" />
-    <Compile Include="Repositories\_Repositories.cs" />
+    <Compile Include="Repositories\_Context.cs" />
     <Compile Include="Repositories\Spells.cs" />
     <Compile Include="Repositories\Triggers.cs" />
     <Compile Include="Repositories\_AbstractRepository.cs" />

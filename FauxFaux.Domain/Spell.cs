@@ -8,5 +8,6 @@ namespace FauxFaux.Domain
 {
     public class Spell
     {
+        public string Name { get; set; }
     }
 }

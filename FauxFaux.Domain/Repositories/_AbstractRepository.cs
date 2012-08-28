@@ -12,17 +12,8 @@ namespace FauxFaux.Domain.Repositories
 
         public AbstractRepository(bool isMock = false)
         {
-            if (!isMock)
-            {
-                _items = new List<T>();
-            }
-            else
-            {
-                InitializeMockData();
-            }
+            _items = new List<T>();
         }
-
-        protected abstract void InitializeMockData();
 
         public int IndexOf(T item)
         {
@@ -39,12 +30,12 @@ namespace FauxFaux.Domain.Repositories
 
         public void Add(T item)
         {
-            throw new NotImplementedException();
+            _items.Add(item);
         }
 
         public void Clear()
         {
-            throw new NotImplementedException();
+            _items.Clear();
         }
 
         public bool Contains(T item)
