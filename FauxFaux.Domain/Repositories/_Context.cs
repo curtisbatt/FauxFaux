@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FauxFaux.Domain.Repositories
 {
-    public class Repositories
+    public class Context
     {
         public Abilities Abilities { get; private set; }
         public Actions Actions { get; private set; }
