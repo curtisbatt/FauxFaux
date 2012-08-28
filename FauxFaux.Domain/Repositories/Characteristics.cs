@@ -2,16 +2,16 @@
 
 namespace FauxFaux.Domain.Repositories
 {
-    public class Abilities : AbstractRepository<Ability>
+    public class Characteristics : AbstractRepository<Characteristic>
     {
-        public Abilities(bool isMock = false)
+        public Characteristics(bool isMock = false)
             : base(isMock)
         {
         }
 
         protected override void InitializeMockData()
         {
-            _items = new List<Ability>()
+            _items = new List<Characteristic>()
             {
             };
         }

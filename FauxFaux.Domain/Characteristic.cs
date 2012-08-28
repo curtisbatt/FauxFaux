@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace FauxFaux.Domain
 {
-    class Characteristic
+    public class Characteristic
     {
+        public string Name { get; private set; }
+
+        public Characteristic(string name)
+        {
+            Name = name;
+        }
     }
 }

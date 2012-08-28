@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FauxFaux.Domain
 {
-    class Spell
+    public class Spell
     {
     }
 }

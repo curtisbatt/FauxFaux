@@ -48,7 +48,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Abilities.cs" />
     <Compile Include="Repositories\Actions.cs" />
+    <Compile Include="Repositories\Characteristics.cs" />
     <Compile Include="Repositories\Models.cs" />
+    <Compile Include="Repositories\_Repositories.cs" />
+    <Compile Include="Repositories\Spells.cs" />
+    <Compile Include="Repositories\Triggers.cs" />
+    <Compile Include="Repositories\_AbstractRepository.cs" />
     <Compile Include="Repositories\Weapons.cs" />
     <Compile Include="Spell.cs" />
     <Compile Include="SuitedValue.cs" />

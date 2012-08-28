@@ -1,18 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace FauxFaux.Domain.Repositories
 {
-    public class Actions
+    public class Actions : AbstractRepository<Action>
     {
-        protected List<Action> _actions;
-
-        public Action[] All
+        public Actions(bool isMock = false)
+            : base(isMock)
         {
-            get { return _actions.ToArray(); }
+        }
+
+        protected override void InitializeMockData()
+        {
+            _items = new List<Action>()
+            {
+            };
         }
     }
 }

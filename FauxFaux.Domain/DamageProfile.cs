@@ -8,8 +8,8 @@ namespace FauxFaux.Domain
 {
     public struct DamageProfile
     {
-        public byte Low;
-        public byte Medium;
-        public byte High;
+        public uint Low;
+        public uint Medium;
+        public uint High;
     }
 }

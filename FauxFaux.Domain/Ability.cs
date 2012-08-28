@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace FauxFaux.Domain
 {
-    class Ability
+    public class Ability
     {
+        public string Name { get; set; }
     }
 }

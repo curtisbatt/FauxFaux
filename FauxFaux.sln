@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FauxFaux.Domain", "FauxFaux.Domain\FauxFaux.Domain.csproj", "{36500F05-8F98-47AA-B89F-9A5432F8DE3A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FauxFaux.Tests", "FauxFaux.Tests\FauxFaux.Tests.csproj", "{9A5E698E-E0B4-4776-A2D4-58590C24ED95}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{36500F05-8F98-47AA-B89F-9A5432F8DE3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{36500F05-8F98-47AA-B89F-9A5432F8DE3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{36500F05-8F98-47AA-B89F-9A5432F8DE3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A5E698E-E0B4-4776-A2D4-58590C24ED95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A5E698E-E0B4-4776-A2D4-58590C24ED95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A5E698E-E0B4-4776-A2D4-58590C24ED95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A5E698E-E0B4-4776-A2D4-58590C24ED95}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

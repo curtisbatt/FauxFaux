@@ -14,7 +14,7 @@ namespace FauxFaux.Domain
         public uint Willpower { get; set; }
         public SuitedValue<uint> Casting { get; set; }
         public uint Defense { get; set; }
-        public uint MyProperty { get; set; }
+        public uint Wounds { get; set; }
         
         // Collections
         public Ability[] Abilities { get; set; }
