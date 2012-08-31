@@ -45,9 +45,9 @@
     <None Include="FauxFaux.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="sample.xsd">
-      <SubType>Designer</SubType>
-    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="FauxFaux.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
