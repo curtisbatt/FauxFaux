@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FauxFaux.Domain", "FauxFaux
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FauxFaux.Tests", "FauxFaux.Tests\FauxFaux.Tests.csproj", "{9A5E698E-E0B4-4776-A2D4-58590C24ED95}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FauxFaux.Xml", "FauxFaux.Xml\FauxFaux.Xml.csproj", "{2D203CE6-0D9D-4843-BB8D-9CB5CEC8017D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{9A5E698E-E0B4-4776-A2D4-58590C24ED95}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9A5E698E-E0B4-4776-A2D4-58590C24ED95}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9A5E698E-E0B4-4776-A2D4-58590C24ED95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D203CE6-0D9D-4843-BB8D-9CB5CEC8017D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D203CE6-0D9D-4843-BB8D-9CB5CEC8017D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D203CE6-0D9D-4843-BB8D-9CB5CEC8017D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D203CE6-0D9D-4843-BB8D-9CB5CEC8017D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

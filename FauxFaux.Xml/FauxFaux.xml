@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fauxfaux xmlns="FauxFaux">
+  <abilities>
+    <ability name="ability1" />
+    <ability name="ability2" />
+    <ability name="ability3" />
+  </abilities>
+  <actions>
+    <action name="action1" />
+    <action name="action2" />
+    <action name="action3" />
+  </actions>
+  <characteristics>
+    <characteristic name="characteristic1" />
+    <characteristic name="characteristic2" />
+    <characteristic name="characteristic3" />
+  </characteristics>
+  <spells>
+    <spell name="spell1" />
+    <spell name="spell2" />
+    <spell name="spell3" />
+  </spells>
+  <triggers>
+    <trigger name="trigger1" />
+    <trigger name="trigger2" />
+    <trigger name="trigger3" />
+  </triggers>
+  <weapons>
+    <weapon name="weapon1">
+      <range type="melee">0</range>
+      <combat suit="crows">0</combat>
+      <damage>
+        <weak>0</weak>
+        <moderate>0</moderate>
+        <severe>0</severe>
+      </damage>
+    </weapon>
+    <weapon name="weapon2">
+      <range type="ranged">255</range>
+      <combat suit="masks">255</combat>
+      <damage>
+        <weak>255</weak>
+        <moderate>255</moderate>
+        <severe>255</severe>
+      </damage>
+    </weapon>
+    <weapon name="weapon3">
+      <range type="melee">1</range>
+      <combat suit="rams">1</combat>
+      <damage>
+        <weak>1</weak>
+        <moderate>1</moderate>
+        <severe>1</severe>
+      </damage>
+    </weapon>
+  </weapons>
+  <models>
+    <model name="name1" type="minion">
+      <walk>0</walk>
+      <charge xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true" />
+      <height>0</height>
+      <willpower>0</willpower>
+      <casting suit="crows">0</casting>
+      <defense>0</defense>
+      <wounds>0</wounds>
+      <abilities>
+        <ability>ability1</ability>
+        <ability>ability2</ability>
+        <ability>ability3</ability>
+      </abilities>
+      <actions>
+        <action>action1</action>
+        <action>action2</action>
+        <action>action3</action>
+      </actions>
+      <characteristics>
+        <characteristic>characteristic1</characteristic>
+        <characteristic>characteristic2</characteristic>
+        <characteristic>characteristic3</characteristic>
+      </characteristics>
+      <spells>
+        <spell>spell1</spell>
+        <spell>spell2</spell>
+        <spell>spell3</spell>
+      </spells>
+      <triggers>
+        <trigger>trigger1</trigger>
+        <trigger>trigger2</trigger>
+        <trigger>trigger3</trigger>
+      </triggers>
+      <weapons>
+        <weapon>weapon1</weapon>
+        <weapon>weapon2</weapon>
+      </weapons>
+    </model>
+    <model name="name2" type="henchman">
+      <walk>255</walk>
+      <charge>0</charge>
+      <height>255</height>
+      <willpower>255</willpower>
+      <casting suit="masks">255</casting>
+      <defense>255</defense>
+      <wounds>255</wounds>
+      <abilities>
+        <ability>ability1</ability>
+        <ability>ability2</ability>
+        <ability>ability3</ability>
+      </abilities>
+      <actions>
+        <action>action1</action>
+        <action>action2</action>
+        <action>action3</action>
+      </actions>
+      <characteristics>
+        <characteristic>characteristic1</characteristic>
+        <characteristic>characteristic2</characteristic>
+        <characteristic>characteristic3</characteristic>
+      </characteristics>
+      <spells>
+        <spell>spell1</spell>
+        <spell>spell2</spell>
+        <spell>spell3</spell>
+      </spells>
+      <triggers>
+        <trigger>trigger1</trigger>
+        <trigger>trigger2</trigger>
+        <trigger>trigger3</trigger>
+      </triggers>
+      <weapons>
+        <weapon>weapon1</weapon>
+        <weapon>weapon2</weapon>
+      </weapons>
+    </model>
+    <model name="name3" type="master">
+      <walk>1</walk>
+      <charge xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true" />
+      <height>1</height>
+      <willpower>1</willpower>
+      <casting suit="rams">1</casting>
+      <defense>1</defense>
+      <wounds>1</wounds>
+      <abilities>
+        <ability>ability1</ability>
+        <ability>ability2</ability>
+        <ability>ability3</ability>
+      </abilities>
+      <actions>
+        <action>action1</action>
+        <action>action2</action>
+        <action>action3</action>
+      </actions>
+      <characteristics>
+        <characteristic>characteristic1</characteristic>
+        <characteristic>characteristic2</characteristic>
+        <characteristic>characteristic3</characteristic>
+      </characteristics>
+      <spells>
+        <spell>spell1</spell>
+        <spell>spell2</spell>
+        <spell>spell3</spell>
+      </spells>
+      <triggers>
+        <trigger>trigger1</trigger>
+        <trigger>trigger2</trigger>
+        <trigger>trigger3</trigger>
+      </triggers>
+      <weapons>
+        <weapon>weapon1</weapon>
+        <weapon>weapon2</weapon>
+      </weapons>
+    </model>
+  </models>
+</fauxfaux>

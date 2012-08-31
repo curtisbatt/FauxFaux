@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           id="FauxFaux"
+           targetNamespace="FauxFaux"
+           xmlns="FauxFaux"
+           xmlns:my="FauxFaux"
+           elementFormDefault="qualified"
+>
+  <!-- Root Element -->
+  <xs:element name="fauxfaux">
+    <xs:complexType>
+      <xs:sequence minOccurs="1" maxOccurs="1">
+        <xs:element name="abilities">
+          <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+              <xs:element name="ability" type="Ability"></xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="actions">
+          <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+              <xs:element name="action" type="Action"></xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="characteristics">
+          <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+              <xs:element name="characteristic" type="Characteristic"></xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="spells">
+          <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+              <xs:element name="spell" type="Spell"></xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="triggers">
+          <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+              <xs:element name="trigger" type="Trigger"></xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="weapons">
+          <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+              <xs:element name="weapon" type="Weapon"></xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="models">
+          <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+              <xs:element name="model" type="Model">
+                <!-- Relationships -->
+                <xs:keyref name="ModelAbilities" refer="AbilityKey">
+                  <xs:selector xpath="./my:abilities/my:ability"></xs:selector>
+                  <xs:field xpath="."></xs:field>
+                </xs:keyref>
+                <xs:keyref name="ModelActions" refer="ActionKey">
+                  <xs:selector xpath="./my:actions/my:action"></xs:selector>
+                  <xs:field xpath="."></xs:field>
+                </xs:keyref>
+                <xs:keyref name="ModelCharacteristics" refer="CharacteristicKey">
+                  <xs:selector xpath="./my:characteristics/my:characteristic"></xs:selector>
+                  <xs:field xpath="."></xs:field>
+                </xs:keyref>
+                <xs:keyref name="ModelSpells" refer="SpellKey">
+                  <xs:selector xpath="./my:spells/my:spell"></xs:selector>
+                  <xs:field xpath="."></xs:field>
+                </xs:keyref>
+                <xs:keyref name="ModelTriggers" refer="TriggerKey">
+                  <xs:selector xpath="./my:triggers/my:trigger"></xs:selector>
+                  <xs:field xpath="."></xs:field>
+                </xs:keyref>
+                <xs:keyref name="ModelWeapons" refer="WeaponKey">
+                  <xs:selector xpath="./my:weapons/my:weapon"></xs:selector>
+                  <xs:field xpath="."></xs:field>
+                </xs:keyref>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+    
+    <!-- Keys -->
+    <xs:key name="AbilityKey">
+      <xs:selector xpath="./my:abilities/my:ability"></xs:selector>
+      <xs:field xpath="@name"></xs:field>
+    </xs:key>
+    <xs:key name="ActionKey">
+      <xs:selector xpath="./my:actions/my:action"></xs:selector>
+      <xs:field xpath="@name"></xs:field>
+    </xs:key>
+    <xs:key name="CharacteristicKey">
+      <xs:selector xpath="./my:characteristics/my:characteristic"></xs:selector>
+      <xs:field xpath="@name"></xs:field>
+    </xs:key>
+    <xs:key name="SpellKey">
+      <xs:selector xpath="./my:spells/my:spell"></xs:selector>
+      <xs:field xpath="@name"></xs:field>
+    </xs:key>
+    <xs:key name="TriggerKey">
+      <xs:selector xpath="./my:triggers/my:trigger"></xs:selector>
+      <xs:field xpath="@name"></xs:field>
+    </xs:key>
+    <xs:key name="WeaponKey">
+      <xs:selector xpath="./my:weapons/my:weapon"></xs:selector>
+      <xs:field xpath="@name"></xs:field>
+    </xs:key>
+    <xs:key name="ModelKey">
+      <xs:selector xpath="./my:models/my:model"></xs:selector>
+      <xs:field xpath="@name"></xs:field>
+    </xs:key>
+  </xs:element>
+
+  <!-- Types -->
+  <xs:complexType name="Ability">
+    <xs:attribute name="name" type="xs:string" use="required"></xs:attribute>
+  </xs:complexType>
+  
+  <xs:complexType name="Action">
+    <xs:attribute name="name" type="xs:string" use="required"></xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="Characteristic">
+    <xs:attribute name="name" type="xs:string" use="required"></xs:attribute>
+  </xs:complexType>
+  
+  <xs:complexType name="Model">
+    <xs:sequence>
+      <xs:element name="walk" type="xs:unsignedByte" minOccurs="1" maxOccurs="1" nillable="false"></xs:element>
+      <xs:element name="charge" type="xs:unsignedByte" minOccurs="1" maxOccurs="1" nillable="true"></xs:element>
+      <xs:element name="height" type="xs:unsignedByte" minOccurs="1" maxOccurs="1" nillable="false"></xs:element>
+      <xs:element name="willpower" type="xs:unsignedByte" minOccurs="1" maxOccurs="1" nillable="false"></xs:element>
+      <xs:element name="casting" type="SuitedValue" minOccurs="1" maxOccurs="1" nillable="false"></xs:element>
+      <xs:element name="defense" type="xs:unsignedByte" minOccurs="1" maxOccurs="1" nillable="false"></xs:element>
+      <xs:element name="wounds" type="xs:unsignedByte" minOccurs="1" maxOccurs="1" nillable="false"></xs:element>
+      <xs:element name="abilities" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ability" type="xs:string" minOccurs="1" maxOccurs="unbounded"></xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="actions" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="action" type="xs:string" minOccurs="1" maxOccurs="unbounded"></xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="characteristics" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:sequence minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="characteristic" type="xs:string" minOccurs="1" maxOccurs="unbounded"></xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="spells" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:sequence minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="spell" type="xs:string" minOccurs="1" maxOccurs="unbounded"></xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="triggers" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:sequence minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="trigger" type="xs:string" minOccurs="1" maxOccurs="unbounded"></xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="weapons" minOccurs="1" maxOccurs="1">
+        <xs:complexType>
+          <xs:sequence minOccurs="1" maxOccurs="1">
+            <xs:element name="weapon" type="xs:string" minOccurs="1" maxOccurs="2"></xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="name" type="xs:string" use="required"></xs:attribute>
+    <xs:attribute name="type" type="ModelType"></xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="Spell">
+    <xs:attribute name="name" type="xs:string" use="required"></xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="Trigger">
+    <xs:attribute name="name" type="xs:string" use="required"></xs:attribute>
+  </xs:complexType>
+  
+  <xs:complexType name="Weapon">
+    <xs:sequence>
+      <xs:element name="range" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="xs:unsignedByte">
+              <xs:attribute name="type" type="RangeType"></xs:attribute>
+            </xs:extension>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="combat" nillable="false" minOccurs="1" maxOccurs="1" type="SuitedValue"></xs:element>
+      <xs:element name="damage" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="weak" nillable="false" minOccurs="1" maxOccurs="1" type="xs:unsignedByte"></xs:element>
+            <xs:element name="moderate" nillable="false" minOccurs="1" maxOccurs="1" type="xs:unsignedByte"></xs:element>
+            <xs:element name="severe" nillable="false" minOccurs="1" maxOccurs="1" type="xs:unsignedByte"></xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="name" type="xs:string" use="required"></xs:attribute>
+  </xs:complexType>
+
+  <xs:simpleType name="ModelType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="minion"></xs:enumeration>
+      <xs:enumeration value="henchman"></xs:enumeration>
+      <xs:enumeration value="master"></xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="RangeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="melee"></xs:enumeration>
+      <xs:enumeration value="ranged"></xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="Suit">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="crows"></xs:enumeration>
+      <xs:enumeration value="masks"></xs:enumeration>
+      <xs:enumeration value="rams"></xs:enumeration>
+      <xs:enumeration value="tomes"></xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="SuitedValue">
+    <xs:simpleContent>
+      <xs:extension base="xs:unsignedByte">
+        <xs:attribute name="suit" type="Suit" use="optional"></xs:attribute>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+</xs:schema>
